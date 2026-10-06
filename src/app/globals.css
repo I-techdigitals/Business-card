@@ -75,19 +75,21 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.25rem 1rem 2.5rem;
+  padding: 0.85rem 0.75rem 2rem;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .page-shell-narrow {
   width: 100%;
-  max-width: 430px;
+  max-width: 420px;
 }
 
 /* Digital card */
 .digital-card {
   width: 100%;
   background: var(--bg-card);
-  border-radius: 28px;
+  border-radius: 22px;
   box-shadow: var(--shadow);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.7);
@@ -106,20 +108,19 @@ button {
 }
 
 .card-section {
-  padding: 1.35rem 1.35rem 0;
+  padding: 1.15rem 1.1rem 0;
 }
 
 .card-section + .card-section {
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
 }
 
 .profile-header {
   text-align: center;
-  padding-top: 2rem;
+  padding: 1.65rem 1.1rem 1.5rem;
   background:
     linear-gradient(165deg, var(--bg-deep) 0%, var(--bg-mid) 55%, #1a334d 100%);
   color: #f8f5f0;
-  padding-bottom: 1.75rem;
   position: relative;
 }
 
@@ -143,8 +144,8 @@ button {
 }
 
 .profile-avatar {
-  width: 112px;
-  height: 112px;
+  width: clamp(88px, 26vw, 120px);
+  height: clamp(88px, 26vw, 120px);
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(255, 255, 255, 0.85);
@@ -178,18 +179,21 @@ button {
   position: relative;
   z-index: 1;
   margin: 0;
+  padding: 0 0.25rem;
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 6vw, 2.35rem);
+  font-size: clamp(1.55rem, 6.5vw, 2.45rem);
   font-weight: 600;
   letter-spacing: 0.04em;
   line-height: 1.15;
+  word-break: break-word;
 }
 
 .profile-title {
   position: relative;
   z-index: 1;
   margin: 0.45rem 0 0;
-  font-size: 0.95rem;
+  padding: 0 0.5rem;
+  font-size: clamp(0.78rem, 2.8vw, 0.95rem);
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -200,8 +204,9 @@ button {
   position: relative;
   z-index: 1;
   margin: 0.85rem auto 0;
-  max-width: 20rem;
-  font-size: 0.95rem;
+  max-width: 22rem;
+  padding: 0 0.5rem;
+  font-size: clamp(0.88rem, 3.2vw, 1rem);
   line-height: 1.5;
   color: rgba(248, 245, 240, 0.72);
 }
@@ -296,9 +301,17 @@ button {
 }
 
 .action-row {
-  display: flex;
-  gap: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 0.55rem;
   margin-top: 0.7rem;
+}
+
+.action-row .btn {
+  min-width: 0;
+  padding-left: 0.45rem;
+  padding-right: 0.45rem;
+  font-size: clamp(0.75rem, 2.8vw, 0.9rem);
 }
 
 .section-title {
@@ -451,19 +464,21 @@ button {
   margin: 0;
   min-width: 0;
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: clamp(1.25rem, 5vw, 1.65rem);
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.1;
+  word-break: break-word;
 }
 
 .business-desc {
   grid-column: 2;
   grid-row: 2;
   margin: 0;
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 3vw, 0.9rem);
   line-height: 1.35;
   color: rgba(248, 245, 240, 0.68);
+  word-break: break-word;
 }
 
 .business-logo {
@@ -653,8 +668,8 @@ button {
 }
 
 .card-footer {
-  margin-top: 1.5rem;
-  padding: 1.15rem 1.35rem 1.5rem;
+  margin-top: 1.25rem;
+  padding: 1.1rem 1.1rem 1.35rem;
   text-align: center;
   border-top: 1px solid var(--line);
 }
@@ -956,33 +971,290 @@ button {
   font-size: 2rem;
 }
 
-@media (min-width: 768px) {
+/* ===== Responsive: small phones ===== */
+@media (max-width: 374px) {
   .page-shell {
-    padding: 2.5rem 1.5rem 3rem;
+    padding: 0.65rem 0.55rem 1.75rem;
   }
 
-  .page-shell-narrow {
-    max-width: 440px;
+  .digital-card {
+    border-radius: 18px;
   }
 
-  .event-mode-inner {
-    max-width: 560px;
+  .card-section {
+    padding-left: 0.95rem;
+    padding-right: 0.95rem;
   }
-}
 
-@media (max-width: 360px) {
   .action-row {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .action-row .btn {
+    font-size: 0.88rem;
   }
 
   .social-grid {
     grid-template-columns: 1fr;
   }
 
-  .card-section {
-    padding-left: 1.1rem;
-    padding-right: 1.1rem;
+  .business-header {
+    column-gap: 0.45rem;
   }
+
+  .business-logo-itech {
+    height: 48px;
+    max-width: 54px;
+  }
+
+  .business-logo-afreya {
+    height: 28px;
+    max-width: 78px;
+  }
+
+  .chip-link {
+    min-height: 38px;
+    font-size: 0.75rem;
+  }
+}
+
+/* ===== Responsive: large phones / small tablets ===== */
+@media (min-width: 430px) {
+  .page-shell {
+    padding: 1.25rem 1rem 2.5rem;
+  }
+
+  .page-shell-narrow {
+    max-width: 460px;
+  }
+
+  .digital-card {
+    border-radius: 28px;
+  }
+
+  .card-section {
+    padding: 1.35rem 1.4rem 0;
+  }
+
+  .profile-header {
+    padding: 2rem 1.4rem 1.75rem;
+  }
+
+  .card-footer {
+    padding: 1.15rem 1.4rem 1.5rem;
+  }
+}
+
+/* ===== Responsive: tablets ===== */
+@media (min-width: 768px) {
+  .page-shell {
+    padding: 2.5rem 1.5rem 3.5rem;
+  }
+
+  .page-shell-narrow {
+    max-width: 520px;
+  }
+
+  .digital-card {
+    border-radius: 32px;
+  }
+
+  .card-section {
+    padding: 1.5rem 1.65rem 0;
+  }
+
+  .profile-header {
+    padding: 2.35rem 1.65rem 2rem;
+  }
+
+  .profile-name {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    min-height: 50px;
+  }
+
+  .action-row {
+    gap: 0.7rem;
+  }
+
+  .action-row .btn {
+    font-size: 0.92rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .info-row {
+    padding: 0.95rem 1.1rem;
+  }
+
+  .business-stack {
+    gap: 0.9rem;
+  }
+
+  .business-card {
+    padding: 1.35rem;
+  }
+
+  .social-grid {
+    gap: 0.7rem;
+  }
+
+  .qr-frame {
+    min-width: 200px;
+    min-height: 200px;
+  }
+
+  .qr-image {
+    max-width: 240px;
+  }
+
+  .event-mode {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .event-mode-inner {
+    max-width: 580px;
+  }
+
+  .admin-shell {
+    padding: 2rem 1.5rem 3.5rem;
+  }
+
+  .admin-header h1 {
+    font-size: 2.35rem;
+  }
+}
+
+/* ===== Responsive: desktop ===== */
+@media (min-width: 1024px) {
+  .page-shell {
+    padding: 3rem 2rem 4rem;
+    justify-content: center;
+  }
+
+  .page-shell-narrow {
+    max-width: 580px;
+  }
+
+  .digital-card {
+    border-radius: 34px;
+    box-shadow: 0 24px 70px rgba(10, 22, 40, 0.14);
+  }
+
+  .card-section {
+    padding: 1.65rem 1.85rem 0;
+  }
+
+  .profile-header {
+    padding: 2.6rem 1.85rem 2.15rem;
+  }
+
+  .profile-avatar {
+    width: 128px;
+    height: 128px;
+  }
+
+  .profile-name {
+    font-size: 2.65rem;
+  }
+
+  .profile-tagline {
+    max-width: 26rem;
+    font-size: 1.05rem;
+  }
+
+  .btn {
+    min-height: 52px;
+    font-size: 0.95rem;
+  }
+
+  .btn-save {
+    font-size: 0.9rem;
+  }
+
+  .contact-social-grid {
+    display: contents;
+  }
+
+  .info-list {
+    gap: 0.55rem;
+  }
+
+  .business-name {
+    font-size: 1.75rem;
+  }
+
+  .business-desc {
+    font-size: 0.92rem;
+  }
+
+  .business-logo-itech {
+    height: 64px;
+    max-width: 70px;
+  }
+
+  .business-logo-afreya {
+    height: 38px;
+    max-width: 100px;
+  }
+
+  .social-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .qr-frame {
+    min-width: 220px;
+    min-height: 220px;
+  }
+
+  .qr-image {
+    max-width: 260px;
+  }
+
+  .event-mode-inner {
+    max-width: 640px;
+  }
+
+  .event-name {
+    font-size: 3.4rem;
+  }
+
+  .admin-shell {
+    max-width: 980px;
+    padding: 2.5rem 2rem 4rem;
+  }
+}
+
+/* ===== Responsive: large desktop ===== */
+@media (min-width: 1280px) {
+  .page-shell-narrow {
+    max-width: 620px;
+  }
+
+  .card-section {
+    padding: 1.75rem 2rem 0;
+  }
+
+  .profile-header {
+    padding: 2.75rem 2rem 2.25rem;
+  }
+}
+
+/* Prevent horizontal scroll on all sizes */
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.business-detail-link,
+.info-value,
+.qr-url,
+.social-label {
+  overflow-wrap: anywhere;
 }
 
 @media (prefers-reduced-motion: reduce) {
