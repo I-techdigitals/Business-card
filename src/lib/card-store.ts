@@ -59,9 +59,20 @@ export function getSiteUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
   }
+
+  // Prefer the custom production domain over temporary Vercel preview URLs
+  if (process.env.VERCEL_ENV === "production") {
+    return "https://businesscard.itechdigitals.com";
+  }
+
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.replace(/\/$/, "")}`;
+  }
+
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL.replace(/\/$/, "")}`;
   }
+
   return "http://localhost:3000";
 }
 

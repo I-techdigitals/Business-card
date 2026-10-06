@@ -32,13 +32,29 @@ Open:
 3. Save / Publish
 4. Preview the public card — the QR URL stays the same unless you intentionally change the slug
 
+## Custom domain
+
+Production URL: `https://businesscard.itechdigitals.com`
+
+Set this in Vercel → Project → Settings → Environment Variables:
+
+```
+NEXT_PUBLIC_SITE_URL=https://businesscard.itechdigitals.com
+```
+
+Apply to **Production**, then **Redeploy**.
+
+Card / QR URL:
+`https://businesscard.itechdigitals.com/card/anam-rashid`
+
+Do not use temporary preview URLs like `business-card-xxxxx-i-tech-digitals.vercel.app` for QR codes.
+
 ## Deploy on Vercel
 
 1. Push the repo and import into Vercel
-2. Set `NEXT_PUBLIC_SITE_URL` to your production domain
+2. Set `NEXT_PUBLIC_SITE_URL` to `https://businesscard.itechdigitals.com`
 3. Set a strong `ADMIN_PASSWORD` and `ADMIN_SESSION_SECRET`
-4. Deploy
+4. Connect domain `businesscard.itechdigitals.com` under Domains
+5. Deploy
 
 Card data is stored in `src/data/card.json`. For multi-instance production persistence, connect a database later using the same `DigitalCard` model.
-# Business-card
-# Business-card
