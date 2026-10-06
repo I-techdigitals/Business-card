@@ -40,3 +40,4 @@ Open:
 4. Deploy
 
 Card data is stored in `src/data/card.json`. For multi-instance production persistence, connect a database later using the same `DigitalCard` model.
+# Business-card
