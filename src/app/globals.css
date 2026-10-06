@@ -41,10 +41,7 @@ body {
   min-height: 100dvh;
   color: var(--ink);
   font-family: var(--font-body);
-  background:
-    radial-gradient(ellipse 120% 80% at 10% -10%, rgba(15, 110, 86, 0.14), transparent 50%),
-    radial-gradient(ellipse 90% 60% at 100% 0%, rgba(10, 22, 40, 0.08), transparent 45%),
-    linear-gradient(180deg, #eef2f6 0%, var(--bg-surface) 40%, #ebe6df 100%);
+  background: var(--bg-card);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -69,30 +66,34 @@ button {
   border: 0;
 }
 
-/* Page shell */
+/* Page shell — edge-to-edge on all devices */
 .page-shell {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0.85rem 0.75rem 2rem;
+  align-items: stretch;
+  padding: 0;
   width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  background: var(--bg-card);
 }
 
 .page-shell-narrow {
   width: 100%;
-  max-width: 420px;
+  max-width: 100%;
+  margin: 0;
 }
 
-/* Digital card */
+/* Digital card — full bleed, no floating phone frame */
 .digital-card {
   width: 100%;
+  min-height: 100dvh;
   background: var(--bg-card);
-  border-radius: 22px;
-  box-shadow: var(--shadow);
+  border-radius: 0;
+  box-shadow: none;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: none;
   animation: card-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -130,9 +131,9 @@ button {
   left: 0;
   right: 0;
   bottom: -1px;
-  height: 28px;
+  height: 22px;
   background: var(--bg-card);
-  border-radius: 28px 28px 0 0;
+  border-radius: 22px 22px 0 0;
 }
 
 .profile-avatar-wrap {
@@ -973,14 +974,6 @@ button {
 
 /* ===== Responsive: small phones ===== */
 @media (max-width: 374px) {
-  .page-shell {
-    padding: 0.65rem 0.55rem 1.75rem;
-  }
-
-  .digital-card {
-    border-radius: 18px;
-  }
-
   .card-section {
     padding-left: 0.95rem;
     padding-right: 0.95rem;
@@ -1018,53 +1011,35 @@ button {
   }
 }
 
-/* ===== Responsive: large phones / small tablets ===== */
+/* ===== Responsive: large phones ===== */
 @media (min-width: 430px) {
-  .page-shell {
-    padding: 1.25rem 1rem 2.5rem;
-  }
-
-  .page-shell-narrow {
-    max-width: 460px;
-  }
-
-  .digital-card {
-    border-radius: 28px;
-  }
-
   .card-section {
-    padding: 1.35rem 1.4rem 0;
+    padding: 1.35rem 1.35rem 0;
   }
 
   .profile-header {
-    padding: 2rem 1.4rem 1.75rem;
+    padding: 2rem 1.35rem 1.75rem;
   }
 
   .card-footer {
-    padding: 1.15rem 1.4rem 1.5rem;
+    padding: 1.15rem 1.35rem 1.5rem;
   }
 }
 
 /* ===== Responsive: tablets ===== */
 @media (min-width: 768px) {
-  .page-shell {
-    padding: 2.5rem 1.5rem 3.5rem;
-  }
-
-  .page-shell-narrow {
-    max-width: 520px;
-  }
-
+  .page-shell,
+  .page-shell-narrow,
   .digital-card {
-    border-radius: 32px;
+    max-width: 100%;
   }
 
   .card-section {
-    padding: 1.5rem 1.65rem 0;
+    padding: 1.5rem clamp(1.5rem, 4vw, 2.5rem) 0;
   }
 
   .profile-header {
-    padding: 2.35rem 1.65rem 2rem;
+    padding: 2.35rem clamp(1.5rem, 4vw, 2.5rem) 2rem;
   }
 
   .profile-name {
@@ -1077,6 +1052,7 @@ button {
 
   .action-row {
     gap: 0.7rem;
+    max-width: 640px;
   }
 
   .action-row .btn {
@@ -1085,12 +1061,17 @@ button {
     padding-right: 0.75rem;
   }
 
+  .btn-primary {
+    max-width: 640px;
+  }
+
   .info-row {
     padding: 0.95rem 1.1rem;
   }
 
   .business-stack {
     gap: 0.9rem;
+    max-width: 720px;
   }
 
   .business-card {
@@ -1099,6 +1080,11 @@ button {
 
   .social-grid {
     gap: 0.7rem;
+    max-width: 720px;
+  }
+
+  .info-list {
+    max-width: 720px;
   }
 
   .qr-frame {
@@ -1108,6 +1094,10 @@ button {
 
   .qr-image {
     max-width: 240px;
+  }
+
+  .card-footer {
+    padding: 1.25rem clamp(1.5rem, 4vw, 2.5rem) 1.75rem;
   }
 
   .event-mode {
@@ -1127,28 +1117,14 @@ button {
   }
 }
 
-/* ===== Responsive: desktop ===== */
+/* ===== Responsive: desktop — still edge-to-edge, content readable ===== */
 @media (min-width: 1024px) {
-  .page-shell {
-    padding: 3rem 2rem 4rem;
-    justify-content: center;
-  }
-
-  .page-shell-narrow {
-    max-width: 580px;
-  }
-
-  .digital-card {
-    border-radius: 34px;
-    box-shadow: 0 24px 70px rgba(10, 22, 40, 0.14);
-  }
-
   .card-section {
-    padding: 1.65rem 1.85rem 0;
+    padding: 1.75rem clamp(2rem, 8vw, 6rem) 0;
   }
 
   .profile-header {
-    padding: 2.6rem 1.85rem 2.15rem;
+    padding: 2.75rem clamp(2rem, 8vw, 6rem) 2.25rem;
   }
 
   .profile-avatar {
@@ -1161,7 +1137,7 @@ button {
   }
 
   .profile-tagline {
-    max-width: 26rem;
+    max-width: 28rem;
     font-size: 1.05rem;
   }
 
@@ -1174,8 +1150,14 @@ button {
     font-size: 0.9rem;
   }
 
-  .contact-social-grid {
-    display: contents;
+  .btn-primary,
+  .action-row,
+  .info-list,
+  .business-stack,
+  .social-grid {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .info-list {
@@ -1213,6 +1195,10 @@ button {
     max-width: 260px;
   }
 
+  .card-footer {
+    padding: 1.35rem clamp(2rem, 8vw, 6rem) 2rem;
+  }
+
   .event-mode-inner {
     max-width: 640px;
   }
@@ -1224,21 +1210,6 @@ button {
   .admin-shell {
     max-width: 980px;
     padding: 2.5rem 2rem 4rem;
-  }
-}
-
-/* ===== Responsive: large desktop ===== */
-@media (min-width: 1280px) {
-  .page-shell-narrow {
-    max-width: 620px;
-  }
-
-  .card-section {
-    padding: 1.75rem 2rem 0;
-  }
-
-  .profile-header {
-    padding: 2.75rem 2rem 2.25rem;
   }
 }
 
