@@ -1,0 +1,91 @@
+{
+  "id": "card-anam-rashid",
+  "slug": "anam-rashid",
+  "firstName": "Anam",
+  "lastName": "Rashid",
+  "fullName": "ANAM A. RASHID",
+  "title": "Founder & CEO",
+  "tagline": "Building brands, digital experiences & business solutions",
+  "profileImage": "",
+  "location": "Kuwait",
+  "phone": "+96590909075",
+  "whatsapp": "+96590909075",
+  "whatsappMessage": "Hello, I would like to connect with you.",
+  "email": "anaam.r21@gmail.com",
+  "emailSubject": "Hello from your digital business card",
+  "emailBody": "Hi Anam,\n\nI scanned your digital business card and would like to connect.\n\nBest regards,",
+  "website": "",
+  "address": "Kuwait",
+  "notes": "Contact via digital business card",
+  "companyName": "I-TECH",
+  "companyLogo": "/itech-logo-white.webp",
+  "companyDescription": "Digital • Design • AI • Web",
+  "companyWebsite": "https://itechdigitals.com/",
+  "companyPhone": "+96599402446",
+  "companyEmail": "itechkw.business@gmail.com",
+  "companyAddress": "Kuwait",
+  "companyInstagram": "",
+  "companyLinkedIn": "",
+  "companyWhatsapp": "+96599402446",
+  "businesses": [
+    {
+      "id": "biz-itech",
+      "name": "I-TECH",
+      "description": "Digital • Design • AI • Web",
+      "logo": "/itech-logo-white.webp",
+      "website": "https://itechdigitals.com/",
+      "phone": "+96599402446",
+      "email": "itechkw.business@gmail.com",
+      "whatsapp": "+96599402446",
+      "address": "Kuwait",
+      "instagram": "",
+      "linkedin": "",
+      "sortOrder": 1,
+      "isVisible": true
+    },
+    {
+      "id": "biz-afreya",
+      "name": "Afreya",
+      "description": "Afreya | Luxury Candles & Personalized Gifts in Kuwait",
+      "logo": "/afreya-logo.webp",
+      "website": "https://afreya.co/",
+      "phone": "+96599402446",
+      "email": "",
+      "whatsapp": "+96599402446",
+      "address": "Kuwait",
+      "instagram": "",
+      "linkedin": "",
+      "sortOrder": 2,
+      "isVisible": true
+    }
+  ],
+  "socialLinks": [
+    {
+      "id": "social-instagram",
+      "platform": "instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com/example",
+      "sortOrder": 1,
+      "isVisible": true
+    },
+    {
+      "id": "social-linkedin",
+      "platform": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/example",
+      "sortOrder": 2,
+      "isVisible": true
+    },
+    {
+      "id": "social-x",
+      "platform": "x",
+      "label": "X",
+      "url": "https://x.com/example",
+      "sortOrder": 3,
+      "isVisible": true
+    }
+  ],
+  "isPublished": true,
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "updatedAt": "2026-10-06T06:44:00.000Z"
+}
