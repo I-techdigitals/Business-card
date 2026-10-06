@@ -30,6 +30,7 @@ export interface BusinessEntry {
   whatsapp: string;
   address: string;
   instagram: string;
+  facebook: string;
   linkedin: string;
   sortOrder: number;
   isVisible: boolean;

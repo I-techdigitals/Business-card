@@ -35,6 +35,7 @@ export function getVisibleBusinesses(card: DigitalCard): BusinessEntry[] {
       whatsapp: card.companyWhatsapp,
       address: card.companyAddress,
       instagram: card.companyInstagram,
+      facebook: "",
       linkedin: card.companyLinkedIn,
       sortOrder: 1,
       isVisible: true,
@@ -50,6 +51,7 @@ export function businessHasContent(business: BusinessEntry): boolean {
       buildWhatsAppUrl(business.whatsapp) ||
       buildTelUrl(business.phone) ||
       sanitizeUrl(business.instagram) ||
+      sanitizeUrl(business.facebook) ||
       sanitizeUrl(business.linkedin)
   );
 }

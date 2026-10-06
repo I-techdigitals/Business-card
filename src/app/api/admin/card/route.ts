@@ -76,6 +76,7 @@ function sanitizeBusinesses(raw: unknown): BusinessEntry[] {
       whatsapp: str("whatsapp"),
       address: str("address"),
       instagram: optionalUrl("instagram"),
+      facebook: optionalUrl("facebook"),
       linkedin: optionalUrl("linkedin"),
       sortOrder: typeof b.sortOrder === "number" ? b.sortOrder : index + 1,
       isVisible: b.isVisible !== false,

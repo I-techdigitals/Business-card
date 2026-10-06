@@ -97,6 +97,7 @@ export function AdminEditor({ initialCard, cardUrl }: Props) {
           whatsapp: "",
           address: "",
           instagram: "",
+          facebook: "",
           linkedin: "",
           sortOrder: (prev.businesses?.length ?? 0) + 1,
           isVisible: true,
@@ -406,6 +407,22 @@ export function AdminEditor({ initialCard, cardUrl }: Props) {
                       id={`biz-address-${business.id}`}
                       value={business.address}
                       onChange={(e) => updateBusiness(index, { address: e.target.value })}
+                    />
+                  </Field>
+                  <Field label="Instagram" id={`biz-instagram-${business.id}`}>
+                    <input
+                      id={`biz-instagram-${business.id}`}
+                      value={business.instagram}
+                      onChange={(e) => updateBusiness(index, { instagram: e.target.value })}
+                      placeholder="https://instagram.com/..."
+                    />
+                  </Field>
+                  <Field label="Facebook" id={`biz-facebook-${business.id}`}>
+                    <input
+                      id={`biz-facebook-${business.id}`}
+                      value={business.facebook || ""}
+                      onChange={(e) => updateBusiness(index, { facebook: e.target.value })}
+                      placeholder="https://facebook.com/..."
                     />
                   </Field>
                   <div className="form-field" style={{ gridColumn: "1 / -1" }}>

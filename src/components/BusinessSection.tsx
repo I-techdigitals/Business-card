@@ -15,6 +15,7 @@ import {
 import { trackEvent } from "@/lib/analytics";
 import {
   IconBuilding,
+  IconFacebook,
   IconGlobe,
   IconInstagram,
   IconLinkedIn,
@@ -42,6 +43,7 @@ export function BusinessSection({ card }: Props) {
           const logoUrl = sanitizeUrl(business.logo);
           const website = sanitizeUrl(business.website);
           const instagram = sanitizeUrl(business.instagram);
+          const facebook = sanitizeUrl(business.facebook);
           const linkedin = sanitizeUrl(business.linkedin);
           const whatsapp = buildWhatsAppUrl(business.whatsapp);
           const mailto = buildMailtoUrl(business.email);
@@ -121,7 +123,7 @@ export function BusinessSection({ card }: Props) {
                 </ul>
               )}
 
-              {(website || whatsapp || instagram || linkedin) && (
+              {(website || whatsapp || instagram || facebook || linkedin) && (
                 <div className="business-links">
                   {website && (
                     <a
@@ -174,6 +176,24 @@ export function BusinessSection({ card }: Props) {
                     >
                       <IconInstagram className="icon-sm" aria-hidden="true" />
                       Instagram
+                    </a>
+                  )}
+                  {facebook && (
+                    <a
+                      href={facebook}
+                      className="chip-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent("social_click", {
+                          slug: card.slug,
+                          platform: "facebook",
+                          company: business.name,
+                        })
+                      }
+                    >
+                      <IconFacebook className="icon-sm" aria-hidden="true" />
+                      Facebook
                     </a>
                   )}
                   {linkedin && (
