@@ -118,7 +118,7 @@ button {
 
 .profile-header {
   text-align: center;
-  padding: 1.65rem 1.1rem 1.5rem;
+  padding: 2rem 1.1rem 1.5rem;
   background:
     linear-gradient(165deg, var(--bg-deep) 0%, var(--bg-mid) 55%, #1a334d 100%);
   color: #f8f5f0;

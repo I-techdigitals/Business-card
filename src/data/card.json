@@ -64,7 +64,7 @@
       "id": "social-instagram",
       "platform": "instagram",
       "label": "Instagram",
-      "url": "https://instagram.com/example",
+      "url": "https://www.instagram.com/anaam_a/",
       "sortOrder": 1,
       "isVisible": true
     },
@@ -72,16 +72,8 @@
       "id": "social-linkedin",
       "platform": "linkedin",
       "label": "LinkedIn",
-      "url": "https://linkedin.com/in/example",
+      "url": "https://www.linkedin.com/in/anam-a-rashid-7a958366/",
       "sortOrder": 2,
-      "isVisible": true
-    },
-    {
-      "id": "social-x",
-      "platform": "x",
-      "label": "X",
-      "url": "https://x.com/example",
-      "sortOrder": 3,
       "isVisible": true
     }
   ],
