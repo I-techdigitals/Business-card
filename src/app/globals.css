@@ -223,7 +223,13 @@ button {
 }
 
 .primary-actions {
-  padding-top: 0.5rem;
+  padding-top: 1.25rem;
+}
+
+.card-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {
@@ -265,6 +271,7 @@ button {
 
 .btn-primary {
   width: 100%;
+  display: flex;
   background: var(--accent);
   color: #fff;
   box-shadow: 0 8px 24px rgba(15, 110, 86, 0.28);
@@ -1034,16 +1041,32 @@ button {
     max-width: 100%;
   }
 
-  .card-section {
-    padding: 1.5rem clamp(1.5rem, 4vw, 2.5rem) 0;
-  }
-
   .profile-header {
-    padding: 2.35rem clamp(1.5rem, 4vw, 2.5rem) 2rem;
+    padding: 2.5rem 2rem 2.1rem;
   }
 
   .profile-name {
     font-size: 2.5rem;
+  }
+
+  .card-body {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 1.5rem 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .card-body .card-section {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1.35rem;
+  }
+
+  .card-body .card-footer {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 1.5rem;
   }
 
   .btn {
@@ -1052,7 +1075,6 @@ button {
 
   .action-row {
     gap: 0.7rem;
-    max-width: 640px;
   }
 
   .action-row .btn {
@@ -1061,17 +1083,12 @@ button {
     padding-right: 0.75rem;
   }
 
-  .btn-primary {
-    max-width: 640px;
-  }
-
   .info-row {
     padding: 0.95rem 1.1rem;
   }
 
   .business-stack {
     gap: 0.9rem;
-    max-width: 720px;
   }
 
   .business-card {
@@ -1080,11 +1097,6 @@ button {
 
   .social-grid {
     gap: 0.7rem;
-    max-width: 720px;
-  }
-
-  .info-list {
-    max-width: 720px;
   }
 
   .qr-frame {
@@ -1094,10 +1106,6 @@ button {
 
   .qr-image {
     max-width: 240px;
-  }
-
-  .card-footer {
-    padding: 1.25rem clamp(1.5rem, 4vw, 2.5rem) 1.75rem;
   }
 
   .event-mode {
@@ -1117,28 +1125,28 @@ button {
   }
 }
 
-/* ===== Responsive: desktop — still edge-to-edge, content readable ===== */
+/* ===== Responsive: desktop ===== */
 @media (min-width: 1024px) {
-  .card-section {
-    padding: 1.75rem clamp(2rem, 8vw, 6rem) 0;
-  }
-
   .profile-header {
-    padding: 2.75rem clamp(2rem, 8vw, 6rem) 2.25rem;
-  }
-
-  .profile-avatar {
-    width: 128px;
-    height: 128px;
+    padding: 3rem 2rem 2.35rem;
   }
 
   .profile-name {
-    font-size: 2.65rem;
+    font-size: 2.75rem;
   }
 
   .profile-tagline {
     max-width: 28rem;
     font-size: 1.05rem;
+  }
+
+  .card-body {
+    max-width: 560px;
+    padding: 0.25rem 1.5rem 1rem;
+  }
+
+  .card-body .card-section {
+    padding-top: 1.5rem;
   }
 
   .btn {
@@ -1148,16 +1156,6 @@ button {
 
   .btn-save {
     font-size: 0.9rem;
-  }
-
-  .btn-primary,
-  .action-row,
-  .info-list,
-  .business-stack,
-  .social-grid {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .info-list {
@@ -1183,7 +1181,7 @@ button {
   }
 
   .social-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .qr-frame {
@@ -1193,10 +1191,6 @@ button {
 
   .qr-image {
     max-width: 260px;
-  }
-
-  .card-footer {
-    padding: 1.35rem clamp(2rem, 8vw, 6rem) 2rem;
   }
 
   .event-mode-inner {
@@ -1210,6 +1204,17 @@ button {
   .admin-shell {
     max-width: 980px;
     padding: 2.5rem 2rem 4rem;
+  }
+}
+
+/* ===== Responsive: large desktop ===== */
+@media (min-width: 1280px) {
+  .card-body {
+    max-width: 600px;
+  }
+
+  .profile-header {
+    padding: 3.25rem 2rem 2.5rem;
   }
 }
 

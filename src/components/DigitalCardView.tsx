@@ -24,16 +24,18 @@ export function DigitalCardView({ card, cardUrl, showInlineQr = true }: Props) {
   return (
     <article className="digital-card">
       <ProfileHeader card={card} />
-      <PrimaryActions card={card} />
-      <ContactSection card={card} />
-      <BusinessSection card={card} />
-      <SocialSection card={card} />
-      {showInlineQr && (
-        <QrDisplay cardUrl={cardUrl} slug={card.slug} showActions={false} compact />
-      )}
-      <footer className="card-footer">
-        <p>Digital Business Card</p>
-      </footer>
+      <div className="card-body">
+        <PrimaryActions card={card} />
+        <ContactSection card={card} />
+        <BusinessSection card={card} />
+        <SocialSection card={card} />
+        {showInlineQr && (
+          <QrDisplay cardUrl={cardUrl} slug={card.slug} showActions={false} compact />
+        )}
+        <footer className="card-footer">
+          <p>Digital Business Card</p>
+        </footer>
+      </div>
     </article>
   );
 }
